@@ -14,11 +14,11 @@ namespace Bondora_HomeTask.Controllers
     {
         private Equipment[] equipment= new Equipment[]
         {
-            new Equipment  { Id = 1, Name = "Caterpillar bulldozer", Type = Types.Regular},
-            new Equipment  { Id = 2, Name = "KamAZ truck", Type = Types.Regular},
-            new Equipment  { Id = 3, Name = "Komatsu crane", Type = Types.Heavy},
-            new Equipment  { Id = 4, Name = "Volvo steamroller", Type = Types.Regular},
-            new Equipment  { Id = 5, Name = "Bosch jackhammer", Type = Types.Specialized}
+            new Equipment  { Id = 0, Name = "Caterpillar bulldozer", Type = Types.Regular},
+            new Equipment  { Id = 1, Name = "KamAZ truck", Type = Types.Regular},
+            new Equipment  { Id = 2, Name = "Komatsu crane", Type = Types.Heavy},
+            new Equipment  { Id = 3, Name = "Volvo steamroller", Type = Types.Regular},
+            new Equipment  { Id = 4, Name = "Bosch jackhammer", Type = Types.Specialized}
         };
         
         // GET: api/equipment
