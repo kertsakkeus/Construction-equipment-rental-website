@@ -59,14 +59,14 @@
 
             <!-- Logo -->
             <div class="sidebar_logo">
-                <a href="./Index">
+                <a href="@Url.Action("Index", "Web")">
                     <img src="../Images/logo.png" width="162" height="150">
             </div>
 
             <!-- Sidebar Navigation -->
             <nav class="sidebar_nav">
                 <ul>
-                    <li><a href="./Index">home</a></li>
+                    <li><a href="@Url.Action("Index", "Web")">home</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
@@ -83,7 +83,7 @@
             <!-- Cart -->
             <div class="cart d-flex flex-row align-items-center justify-content-start">
                 <div class="cart_icon">
-                    <a href="./Cart">
+                    <a href="@Url.Action("Cart", "Web")">
                         <img src="../Images/bag.png" alt="">
                         <div class="cart_num">2</div>
                     </a>
@@ -132,8 +132,8 @@
                                 </div>
                                 <div class="product_sidebar order-lg-2 order-1">
                                     <form action="#" id="product_form" class="product_form">
-                                        <div class="product_name">Komatsu crane</div>
-                                        <div class="product_price">$0</div>
+                                        <div class="product_name"> @Html.Raw((String)ViewBag.product_name)</div>
+                                        <div class="product_price">@Html.Raw((String)ViewBag.product_price)</div>
                                         <div class="product_type">Type: <span class="product_type_color">Heavy</span></div>
                                         <div class="product_time">
                                             <div class="product_time_title">Select Renting time</div>

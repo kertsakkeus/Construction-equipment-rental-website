@@ -15,6 +15,8 @@ namespace Bondora_HomeTask.Controllers
 
         public ActionResult Product(int id)
         {
+            ViewBag.product_name = "Kert";
+            ViewBag.product_price = "50€";
             return View();
         }
 
