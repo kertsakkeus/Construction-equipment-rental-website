@@ -13,7 +13,7 @@ namespace Bondora_HomeTask.Controllers
             return View();
         }
 
-        public ActionResult Product()
+        public ActionResult Product(int id)
         {
             return View();
         }
