@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Bondora_HomeTask.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,10 +15,15 @@ namespace Bondora_HomeTask.Controllers
             return View();
         }
 
-        public ActionResult Product(int id)
+        public async Task<ActionResult> Product(int id)
         {
-            ViewBag.product_name = "Kert";
-            ViewBag.product_price = "50€";
+            List<string> ProductInfo = new List<string>();
+
+            ProductInfo = await ApiRequests.GetProduct(id);
+
+            ViewBag.product_name = ProductInfo[0];
+            ViewBag.product_type = ProductInfo[1];
+            ViewBag.product_image = ProductInfo[2];
             return View();
         }
 
