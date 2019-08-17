@@ -11,21 +11,15 @@ namespace Bondora_HomeTask.Models
 {
     public class ApiRequests
     {
+        static readonly string url = "http://localhost:61388/api/equipment";
+
         public static async Task<List<string>> GetProduct(int Id)
         {
             try
             {
                 List<string> ProductInfo = new List<string>();
 
-                var request = WebRequest.Create(new Uri("http://localhost:61388/api/equipment?id=" + Id.ToString())) as HttpWebRequest;
-                request.Method = "GET";
-                request.ContentType = "application/json";
-                WebResponse responseObject = await Task<WebResponse>.Factory.FromAsync(request.BeginGetResponse, request.EndGetResponse, request);
-                var responseStream = responseObject.GetResponseStream();
-                var sr = new StreamReader(responseStream);
-                string received = await sr.ReadToEndAsync();
-
-                dynamic json = JObject.Parse(received);
+                dynamic json = await APIRequest("?id=" + Id.ToString());
 
                 string color = json.Type;
 
@@ -38,6 +32,27 @@ namespace Bondora_HomeTask.Models
                 ProductInfo.Add(image);
 
                 return ProductInfo;
+            }
+            catch
+            {
+                throw new HttpException(404, "Not Found");
+            }
+        }
+        public static async Task<dynamic> APIRequest(string requestURL = "")
+        {
+            try
+            {
+                var request = WebRequest.Create(new Uri ("http://localhost:61388/api/equipment" + requestURL)) as HttpWebRequest;
+                request.Method = "GET";
+                request.ContentType = "application/json";
+                WebResponse responseObject = await Task<WebResponse>.Factory.FromAsync(request.BeginGetResponse, request.EndGetResponse, request);
+                var responseStream = responseObject.GetResponseStream();
+                var sr = new StreamReader(responseStream);
+                string received = await sr.ReadToEndAsync();
+
+                dynamic json = JObject.Parse(received);
+
+                return json;
             }
             catch
             {
