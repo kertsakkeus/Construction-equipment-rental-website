@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace Bondora_HomeTask.Models
 {
@@ -19,7 +20,7 @@ namespace Bondora_HomeTask.Models
             {
                 List<string> ProductInfo = new List<string>();
 
-                dynamic json = await APIRequest("?id=" + Id.ToString());
+                dynamic json = JObject.Parse(await APIRequest("?id=" + Id.ToString()));
 
                 string color = json.Type;
 
@@ -38,11 +39,51 @@ namespace Bondora_HomeTask.Models
                 throw new HttpException(404, "Not Found");
             }
         }
-        public static async Task<dynamic> APIRequest(string requestURL = "")
+        public static async Task<string> GetAllEquipment()
         {
             try
             {
-                var request = WebRequest.Create(new Uri ("http://localhost:61388/api/equipment" + requestURL)) as HttpWebRequest;
+                string htmlItems = "";
+
+                var jsonArray = JArray.Parse(await APIRequest());
+                int count = jsonArray.Count();
+
+                List<Items> itemsList = jsonArray.ToObject<List<Items>>();
+
+                string xd = itemsList[0].Name;
+
+                string id, name, type, image;
+
+                for (int i = 0; i < count; i++)
+                {
+                    htmlItems = htmlItems + "<div class='product grid-item " + itemsList[i].Type.ToLower() + "'>" +
+                    "<div class='product_inner'>" +
+                        "<div class='product_image'>" +
+                            "<a href = 'Web/Product?id=" + itemsList[i].Id + "'>" +
+                                "<img src = '../Images/" + itemsList[i].Image + "'>" +
+                                "<div class='product_tag'>" + itemsList[i].Type + "</div>" +
+                        "</div>" +
+                        "<div class='product_content text-center'>" +
+                            "<div class='product_title'><a href = 'Web/Product?id=" + itemsList[i].Id + "'>" + itemsList[i].Name + "</a></div>" +
+                            "<div class='product_price'>$0.00</div>" +
+                            "<div class='product_button ml-auto mr-auto trans_200'><a href = '#' > add to cart</a></div>" +
+                        "</div>" +
+                    "</div>" +
+                "</div>";
+                }
+
+                return htmlItems;
+            }
+            catch
+            {
+                throw new HttpException(404, "Not Found");
+            }
+        }
+        public static async Task<string> APIRequest(string requestURL = "")
+        {
+            try
+            {
+                var request = WebRequest.Create(new Uri("http://localhost:61388/api/equipment" + requestURL)) as HttpWebRequest;
                 request.Method = "GET";
                 request.ContentType = "application/json";
                 WebResponse responseObject = await Task<WebResponse>.Factory.FromAsync(request.BeginGetResponse, request.EndGetResponse, request);
@@ -50,9 +91,7 @@ namespace Bondora_HomeTask.Models
                 var sr = new StreamReader(responseStream);
                 string received = await sr.ReadToEndAsync();
 
-                dynamic json = JObject.Parse(received);
-
-                return json;
+                return received;
             }
             catch
             {

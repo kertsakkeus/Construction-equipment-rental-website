@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="Models\ApiRequests.cs" />
     <Compile Include="Models\Equipment.cs" />
+    <Compile Include="Models\Items.cs" />
     <Compile Include="Models\PriceCalculation.cs" />
     <Compile Include="Models\TypeColorController.cs" />
     <Compile Include="Models\Types.cs" />

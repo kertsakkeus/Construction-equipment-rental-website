@@ -10,8 +10,12 @@ namespace Bondora_HomeTask.Controllers
 {
     public class WebController : Controller
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            string items = await ApiRequests.GetAllEquipment();
+
+            ViewBag.equipment = items;
+
             return View();
         }
 
