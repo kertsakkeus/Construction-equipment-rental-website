@@ -83,22 +83,41 @@ namespace Bondora_HomeTask.Models
             {
                 List<CartItems> cartItemsList = new List<CartItems>();
 
-                string cartItems = "";
+                cartItemsList = CookieManager.GetCookie();
 
-                var jsonArray = JArray.Parse(await APIRequest());
-                int count = jsonArray.Count();
-
-                List<Items> itemsList = jsonArray.ToObject<List<Items>>();
-
-                for (int i = 0; i < count; i++)
+                if (cartItemsList != null)
                 {
-                    if (cartItemsList[i].Id == itemsList[i].Id)
-                    {
-                        cartItems = cartItems + "";
-                    }
-                }
+                    string cartItems = "";
 
-                return cartItems;
+                    var jsonArray = JArray.Parse(await APIRequest());
+                    int count = jsonArray.Count();
+
+                    List<Items> itemsList = jsonArray.ToObject<List<Items>>();
+
+                    for (int j = 0; j < cartItemsList.Count; j++)
+                    {
+                        for (int i = 0; i < count; i++)
+                        {
+                            if (cartItemsList[j].Id == itemsList[i].Id)
+                            {
+                                cartItems = cartItems + "<li class='cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start'>" +
+                        "<div class='product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start'>" +
+                            "<div><div class='product_image'><img src = '../Images/" + itemsList[i].Image + "'></div></div>" +
+                            "<div class='product_name'><a href = 'Product?id=" + itemsList[i].Id + "')'>" + itemsList[i].Name + "</a></div>" +
+                        "</div>" +
+                        "<div class='product_color_" + itemsList[i].Type.ToLower() + " text-lg-center product_text'>" + itemsList[i].Type + "</div>" +
+                        "<div class='product_price text-lg-center product_text'>" + cartItemsList[j].Price + "€" + "</div>" +
+                        "<div class='product_time text-lg-center product_text'>" + "1" + "</div>" +
+                        "<div class='product_total text-lg-center product_text'>" + cartItemsList[j].Price + "€" + "</div>" +
+                        "<div class='product_remove text-lg-center product_text'><button class='remove_button'><i class='fa fa-close'></i></button></div>" +
+                    "</li>";
+                            }
+                        }
+                    }
+
+                    return cartItems;
+                }
+                return "";
             }
             catch
             {

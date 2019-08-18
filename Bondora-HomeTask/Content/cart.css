@@ -1211,10 +1211,19 @@ section
 	font-weight: 700;
 	color: #414141;
 }
-.product_type_color
+.product_color_regular
 {
-	color: #ff3b3b;
+    color: #bbe432;
 }
+.product_color_heavy 
+{
+    color: #ff3b3b;
+}
+.product_color_specialized 
+{
+    color: #006ccb;
+}
+
 
 .product_quantity
 {

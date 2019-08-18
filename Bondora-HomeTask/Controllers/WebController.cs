@@ -32,11 +32,9 @@ namespace Bondora_HomeTask.Controllers
             return View();
         }
 
-        public ActionResult Cart()
+        public async Task<ActionResult> Cart()
         {
-            List<CartItems> cartItems = new List<CartItems>();
-
-            cartItems = CookieManager.GetCookie();
+            ViewBag.cartItems = await ApiRequests.GetCartItems();
 
             return View();
         }
