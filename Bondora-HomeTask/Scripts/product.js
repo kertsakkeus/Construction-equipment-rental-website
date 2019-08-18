@@ -1,88 +1,44 @@
-/* JS Document */
+﻿function setPrice(time) {
+    var price = document.getElementById("product_price");
+    var type = document.getElementById("product_type").innerHTML;
 
-/******************************
+    type = type.substring(36);
+    type = type.substring(0, type.length - 7);
 
-[Table of Contents]
+    price.innerHTML = priceCalculation(type, time).toString() + "€";
+}
 
-1. Vars and Inits
-2. Init Menu
+function priceCalculation(type, rentTime) {
+    var OneTime = 100;
+    var Premium = 60;
+    var Regular = 40; 
 
-
-******************************/
-
-$(document).ready(function()
-{
-	"use strict";
-
-	/* 
-
-	1. Vars and Inits
-
-	*/
-
-	var menu = $('.menu');
-	var burger = $('.hamburger');
-	var menuActive = false;
-
-	$(window).on('resize', function()
-	{
-		setTimeout(function()
-		{
-			$(window).trigger('resize.px.parallax');
-		}, 375);
-	});
-
-	initMenu();
-
-	/* 
-
-	2. Init Menu
-
-	*/
-
-	function initMenu()
-	{
-		if(menu.length)
-		{
-			if($('.hamburger').length)
-			{
-				burger.on('click', function()
-				{
-					if(menuActive)
-					{
-						closeMenu();
-					}
-					else
-					{
-						openMenu();
-
-						$(document).one('click', function cls(e)
-						{
-							if($(e.target).hasClass('menu_mm'))
-							{
-								$(document).one('click', cls);
-							}
-							else
-							{
-								closeMenu();
-							}
-						});
-					}
-				});
-			}
-		}
-	}
-
-	function openMenu()
-	{
-		menu.addClass('active');
-		menuActive = true;
-	}
-
-	function closeMenu()
-	{
-		menu.removeClass('active');
-		menuActive = false;
-	}
-
-});
+    var rentalPrice;
+    if (type == "Regular") {
+        if (rentTime <= 2) {
+            rentalPrice = OneTime + (Premium * rentTime);
+            return rentalPrice;
+        }
+        else {
+            rentalPrice = OneTime + (Premium * 2) + (Regular * (rentTime - 2));
+            return rentalPrice;
+        }
+    }
+    else if (type == "Heavy") {
+        rentalPrice = OneTime + (Premium * rentTime);
+        return rentalPrice;
+    }
+    else if (type == "Specialized") {
+        if (rentTime <= 3) {
+            rentalPrice = Premium * rentTime;
+            return rentalPrice;
+        }
+        else {
+            rentalPrice = (Premium * 3) + (Regular * (rentTime - 3));
+            return rentalPrice;
+        }
+    }
+    else {
+        return 0;
+    }
+}

@@ -243,12 +243,9 @@
     <Content Include="Plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Plugins\scrollmagic\ScrollMagic.min.js" />
-    <Content Include="Scripts\cart.js" />
-    <Content Include="Scripts\categories.js" />
-    <Content Include="Scripts\checkout.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
-    <Content Include="Scripts\price.js" />
     <Content Include="Scripts\product.js" />
+    <Content Include="Scripts\categories.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
