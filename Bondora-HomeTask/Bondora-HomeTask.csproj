@@ -190,6 +190,7 @@
     <Content Include="Content\checkout_responsive.css" />
     <Content Include="Content\product.css" />
     <Content Include="Content\product_responsive.css" />
+    <Content Include="Content\sweetalert.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -249,6 +250,7 @@
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\product.js" />
     <Content Include="Scripts\categories.js" />
+    <Content Include="Scripts\sweetalert-min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -61,9 +61,9 @@ function addToCart() {
         cart_number.innerHTML = (parseInt(cart_number.innerHTML, 10) + 1).toString();
         document.cookie += "Id=" + id + "Price=" + price + "Time=" + checkedRadioButton + "|";
 
-        console.log(document.cookie);
+        swal("Success", "Product successfully added to your cart", "success");
     }
     else {
-        alert("Please choose renting time!");
+        swal("Info", "Please choose a renting time!", "info");
     }
 }
