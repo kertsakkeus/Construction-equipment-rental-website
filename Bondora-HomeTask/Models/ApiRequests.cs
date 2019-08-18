@@ -39,6 +39,7 @@ namespace Bondora_HomeTask.Models
                 throw new HttpException(404, "Not Found");
             }
         }
+
         public static async Task<string> GetAllEquipment()
         {
             try
@@ -49,10 +50,6 @@ namespace Bondora_HomeTask.Models
                 int count = jsonArray.Count();
 
                 List<Items> itemsList = jsonArray.ToObject<List<Items>>();
-
-                string xd = itemsList[0].Name;
-
-                string id, name, type, image;
 
                 for (int i = 0; i < count; i++)
                 {
@@ -79,6 +76,36 @@ namespace Bondora_HomeTask.Models
                 throw new HttpException(404, "Not Found");
             }
         }
+
+        public static async Task<string> GetCartItems()
+        {
+            try
+            {
+                List<CartItems> cartItemsList = new List<CartItems>();
+
+                string cartItems = "";
+
+                var jsonArray = JArray.Parse(await APIRequest());
+                int count = jsonArray.Count();
+
+                List<Items> itemsList = jsonArray.ToObject<List<Items>>();
+
+                for (int i = 0; i < count; i++)
+                {
+                    if (cartItemsList[i].Id == itemsList[i].Id)
+                    {
+                        cartItems = cartItems + "";
+                    }
+                }
+
+                return cartItems;
+            }
+            catch
+            {
+                throw new HttpException(404, "Not Found");
+            }
+        }
+
         public static async Task<string> APIRequest(string requestURL = "")
         {
             try

@@ -167,6 +167,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ApiRequests.cs" />
+    <Compile Include="Models\CartItems.cs" />
+    <Compile Include="Models\CookieManager.cs" />
     <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\PriceCalculation.cs" />

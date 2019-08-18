@@ -55,8 +55,7 @@ function addToCart() {
     if (price != "0") {
         cart_price.innerHTML = (parseInt(subCartPrice, 10) + parseInt(price, 10)).toString() + "€";
         cart_number.innerHTML = (parseInt(cart_number.innerHTML, 10) + 1).toString();
-        document.cookie += " Id=" + id;
-        document.cookie += " Price=" + price;
+        document.cookie += "Id=" + id + "Price=" + price + "|";
 
         console.log(document.cookie);
     }

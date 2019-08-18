@@ -34,6 +34,10 @@ namespace Bondora_HomeTask.Controllers
 
         public ActionResult Cart()
         {
+            List<CartItems> cartItems = new List<CartItems>();
+
+            cartItems = CookieManager.GetCookie();
+
             return View();
         }
 
