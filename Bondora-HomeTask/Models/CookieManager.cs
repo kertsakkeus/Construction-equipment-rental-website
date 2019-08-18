@@ -20,13 +20,16 @@ namespace Bondora_HomeTask.Models
 
                 for (int i = 0; i < items.Length - 1; i++)
                 {
-                    int index = items[i].IndexOf('P');
-                    string id = items[i].Substring(0, index);
-                    string price = items[i].Substring(index);
+                    int indexPrice = items[i].IndexOf('P');
+                    int indexTime = items[i].IndexOf('T');
+                    string id = items[i].Substring(0, indexPrice);
+                    string price = items[i].Substring(indexPrice, indexTime - 4);
+                    string time = items[i].Substring(indexTime);
+                    time = time.Substring(5);
                     price = price.Substring(6);
                     id = id.Substring(3);
 
-                    cartItems.Add(new CartItems { Id = id, Price = price });
+                    cartItems.Add(new CartItems { Id = id, Price = price, Time = time });
                 }
                 return cartItems;
             }

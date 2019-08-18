@@ -1,6 +1,10 @@
-﻿function setPrice(time) {
+﻿var checkedRadioButton;
+
+function setPrice(time) {
     var price = document.getElementById("product_price");
     var type = document.getElementById("product_type").innerHTML;
+
+    checkedRadioButton = time;
 
     type = type.substring(36);
     type = type.substring(0, type.length - 7);
@@ -55,7 +59,7 @@ function addToCart() {
     if (price != "0") {
         cart_price.innerHTML = (parseInt(subCartPrice, 10) + parseInt(price, 10)).toString() + "€";
         cart_number.innerHTML = (parseInt(cart_number.innerHTML, 10) + 1).toString();
-        document.cookie += "Id=" + id + "Price=" + price + "|";
+        document.cookie += "Id=" + id + "Price=" + price + "Time=" + checkedRadioButton + "|";
 
         console.log(document.cookie);
     }

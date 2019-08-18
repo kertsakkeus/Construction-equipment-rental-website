@@ -24,7 +24,7 @@ namespace Bondora_HomeTask.Models
                 }
                 else
                 {
-                    rentalPrice = OneTime + (Premium * 2) + (Regular * rentTime);
+                    rentalPrice = OneTime + (Premium * 2) + (Regular * (rentTime - 2));
                     return rentalPrice;
                 }
             }
@@ -42,7 +42,7 @@ namespace Bondora_HomeTask.Models
                 }
                 else
                 {
-                    rentalPrice = (Premium * 3) + (Regular * rentTime);
+                    rentalPrice = (Premium * 3) + (Regular * (rentTime - 3));
                     return rentalPrice;
                 }
             }

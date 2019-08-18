@@ -9,5 +9,6 @@ namespace Bondora_HomeTask.Models
     {
         public string Id { get; set; }
         public string Price { get; set; }
+        public string Time { get; set; }
     }
 }

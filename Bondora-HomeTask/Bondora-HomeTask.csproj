@@ -172,6 +172,7 @@
     <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\PriceCalculation.cs" />
+    <Compile Include="Models\TimeToDate.cs" />
     <Compile Include="Models\TypeColorController.cs" />
     <Compile Include="Models\Types.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

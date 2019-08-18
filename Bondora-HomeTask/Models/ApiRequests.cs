@@ -106,8 +106,8 @@ namespace Bondora_HomeTask.Models
                             "<div class='product_name'><a href = 'Product?id=" + itemsList[i].Id + "')'>" + itemsList[i].Name + "</a></div>" +
                         "</div>" +
                         "<div class='product_color_" + itemsList[i].Type.ToLower() + " text-lg-center product_text'>" + itemsList[i].Type + "</div>" +
-                        "<div class='product_price text-lg-center product_text'>" + cartItemsList[j].Price + "€" + "</div>" +
-                        "<div class='product_time text-lg-center product_text'>" + "1" + "</div>" +
+                        "<div class='product_price text-lg-center product_text'>" + PriceCalculation.EquipmentPrice(itemsList[i].Type, 1) + "€" + "</div>" +
+                        "<div class='product_time text-lg-center product_text'>" + TimeToDate.GetDate(Convert.ToInt32(cartItemsList[j].Time)) + "</div>" +
                         "<div class='product_total text-lg-center product_text'>" + cartItemsList[j].Price + "€" + "</div>" +
                         "<div class='product_remove text-lg-center product_text'><button class='remove_button'><i class='fa fa-close'></i></button></div>" +
                     "</li>";
