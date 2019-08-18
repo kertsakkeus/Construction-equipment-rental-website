@@ -154,13 +154,10 @@
                                 <div class="cart_extra_content cart_extra_total">
                                     <div class="cart_extra_title">Cart Total</div>
                                     <ul class="cart_extra_total_list">
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div class="cart_extra_total_title">Komatsu crane | 1 Day</div>
-                                            <div class="cart_extra_total_value ml-auto">$29.90</div>
-                                        </li>
+                                        @Html.Raw((String)ViewBag.cart_item)
                                         <li class="d-flex flex-row align-items-center justify-content-start">
                                             <div class="cart_extra_total_title">Total</div>
-                                            <div class="cart_extra_total_value ml-auto">$29.90</div>
+                                            <div class="cart_extra_total_value ml-auto">@Html.Raw((String)ViewBag.cart_price)</div>
                                         </li>
                                     </ul>
                                     <div class="checkout_button trans_200"><a href="@Url.Action("Checkout", "Web")">proceed to checkout</a></div>
