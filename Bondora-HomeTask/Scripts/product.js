@@ -42,3 +42,25 @@ function priceCalculation(type, rentTime) {
         return 0;
     }
 }
+
+function addToCart() {
+    var id = document.URL.substring(document.URL.length - 1);
+    var price = document.getElementById("product_price").innerHTML;
+    var cart_price = document.getElementById("cart_price");
+    var cart_number = document.getElementById("cart_num");
+
+    price = price.substring(0, price.length - 1);
+    var subCartPrice = cart_price.innerHTML.substring(0, cart_price.innerHTML.length - 1);
+
+    if (price != "0") {
+        cart_price.innerHTML = (parseInt(subCartPrice, 10) + parseInt(price, 10)).toString() + "€";
+        cart_number.innerHTML = (parseInt(cart_number.innerHTML, 10) + 1).toString();
+        document.cookie += " Id=" + id;
+        document.cookie += " Price=" + price;
+
+        console.log(document.cookie);
+    }
+    else {
+        alert("Please choose renting time!");
+    }
+}
