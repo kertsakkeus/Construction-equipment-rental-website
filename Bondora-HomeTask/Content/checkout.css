@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -418,26 +418,7 @@ section
 	padding-left: 50px;
 	margin-top: 64px;
 }
-.sidebar_logo a
-{
-	display: block;
-}
-.sidebar_logo a > div
-{
-	border: solid 2px #bbe432;
-	padding-top: 13px;
-	padding-bottom: 13px;
-	text-align: center;
-	font-size: 48px;
-	font-weight: 700;
-	line-height: 0.75;
-	color: #bbe432;
-}
-.sidebar_logo a > div span
-{
-	text-transform: uppercase;
-	color: #FFFFFF;
-}
+
 /* Navigation */
 .sidebar_nav
 {
