@@ -56,14 +56,13 @@ namespace Bondora_HomeTask.Models
                     htmlItems = htmlItems + "<div class='product grid-item " + itemsList[i].Type.ToLower() + "'>" +
                     "<div class='product_inner'>" +
                         "<div class='product_image'>" +
-                            "<a href = 'Web/Product?id=" + itemsList[i].Id + "'>" +
+                            "<a href = 'Product?id=" + itemsList[i].Id + "'>" +
                                 "<img src = '../Images/" + itemsList[i].Image + "'>" +
                                 "<div class='product_tag'>" + itemsList[i].Type + "</div>" +
                         "</div>" +
                         "<div class='product_content text-center'>" +
-                            "<div class='product_title'><a href = 'Web/Product?id=" + itemsList[i].Id + "'>" + itemsList[i].Name + "</a></div>" +
-                            "<div class='product_price'>$0.00</div>" +
-                            "<div class='product_button ml-auto mr-auto trans_200'><a href = '#' > add to cart</a></div>" +
+                            "<div class='product_title'><a href = 'Product?id=" + itemsList[i].Id + "'>" + itemsList[i].Name + "</a></div>" +
+                            "<div class='product_price'>" + PriceCalculation.EquipmentPrice(itemsList[i].Type, 1) + "€" + "</div>" +
                         "</div>" +
                     "</div>" +
                 "</div>";
@@ -77,7 +76,7 @@ namespace Bondora_HomeTask.Models
             }
         }
 
-        public static async Task<string> GetCartItems()
+        public static async Task<string[]> GetCartItems()
         {
             try
             {
@@ -85,10 +84,10 @@ namespace Bondora_HomeTask.Models
 
                 cartItemsList = CookieManager.GetCookie();
 
+                string[] cartItems = new string[] { "", "0", "0€" };
+
                 if (cartItemsList != null)
                 {
-                    string cartItems = "";
-
                     var jsonArray = JArray.Parse(await APIRequest());
                     int count = jsonArray.Count();
 
@@ -100,7 +99,7 @@ namespace Bondora_HomeTask.Models
                         {
                             if (cartItemsList[j].Id == itemsList[i].Id)
                             {
-                                cartItems = cartItems + "<li class='cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start'>" +
+                                cartItems[0] = cartItems[0] + "<li class='cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start'>" +
                         "<div class='product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start'>" +
                             "<div><div class='product_image'><img src = '../Images/" + itemsList[i].Image + "'></div></div>" +
                             "<div class='product_name'><a href = 'Product?id=" + itemsList[i].Id + "')'>" + itemsList[i].Name + "</a></div>" +
@@ -114,10 +113,18 @@ namespace Bondora_HomeTask.Models
                             }
                         }
                     }
+                    int totalPrice = 0;
 
+                    for (int i = 0; i < cartItemsList.Count; i++)
+                    {
+                        totalPrice = totalPrice + Convert.ToInt32(cartItemsList[i].Price);
+                    }
+
+                    cartItems[1] = cartItemsList.Count.ToString();
+                    cartItems[2] = totalPrice.ToString() + "€";
                     return cartItems;
                 }
-                return "";
+                return cartItems;
             }
             catch
             {

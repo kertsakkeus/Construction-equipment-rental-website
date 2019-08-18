@@ -16,6 +16,11 @@ namespace Bondora_HomeTask.Controllers
 
             ViewBag.equipment = items;
 
+            string[] cartItems = await ApiRequests.GetCartItems();
+
+            ViewBag.cart_num = cartItems[1];
+            ViewBag.cart_price = cartItems[2];
+
             return View();
         }
 
@@ -29,18 +34,32 @@ namespace Bondora_HomeTask.Controllers
             ViewBag.product_type = ProductInfo[1];
             ViewBag.product_image = ProductInfo[2];
 
+            string[] cartItems = await ApiRequests.GetCartItems();
+
+            ViewBag.cart_num = cartItems[1];
+            ViewBag.cart_price = cartItems[2];
+
             return View();
         }
 
         public async Task<ActionResult> Cart()
         {
-            ViewBag.cartItems = await ApiRequests.GetCartItems();
+            string[] cartItems = await ApiRequests.GetCartItems();
+
+            ViewBag.cartItems = cartItems[0];
+            ViewBag.cart_num = cartItems[1];
+            ViewBag.cart_price = cartItems[2];
 
             return View();
         }
 
-        public ActionResult Checkout()
+        public async Task<ActionResult> Checkout()
         {
+            string[] cartItems = await ApiRequests.GetCartItems();
+
+            ViewBag.cart_num = cartItems[1];
+            ViewBag.cart_price = cartItems[2];
+
             return View();
         }
     }

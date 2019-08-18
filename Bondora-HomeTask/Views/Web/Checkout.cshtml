@@ -59,7 +59,7 @@
 
             <!-- Logo -->
             <div class="sidebar_logo">
-                <a href="@Url.Action("Index", "Web")">
+                <a href="Index">
                     <img src="../Images/logo.png" width="162" height="150">
                 </a>
             </div>
@@ -67,7 +67,7 @@
             <!-- Sidebar Navigation -->
             <nav class="sidebar_nav">
                 <ul>
-                    <li><a href="@Url.Action("Index", "Web")">home</a></li>
+                    <li><a href="Index">home</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
@@ -86,11 +86,11 @@
                 <div class="cart_icon">
                     <a href="@Url.Action("Cart", "Web")">
                         <img src="../Images/bag.png" alt="">
-                        <div class="cart_num">2</div>
+                        <div class="cart_num">@Html.Raw((String)ViewBag.cart_num)</div>
                     </a>
                 </div>
                 <div class="cart_text">Cart</div>
-                <div class="cart_price">$39.99 (1)</div>
+                <div class="cart_price">@Html.Raw((String)ViewBag.cart_price)</div>
             </div>
         </div>
 

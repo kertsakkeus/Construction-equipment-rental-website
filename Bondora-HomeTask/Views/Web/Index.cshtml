@@ -59,7 +59,7 @@
 
             <!-- Logo -->
             <div class="sidebar_logo">
-                <a href="@Url.Action("Index", "Web")">
+                <a href="Index">
                     <img src="../Images/logo.png" width="162" height="150">
                 </a>
             </div>
@@ -67,7 +67,7 @@
             <!-- Sidebar Navigation -->
             <nav class="sidebar_nav">
                 <ul>
-                    <li><a href="@Url.Action("Index", "Web")">home</a></li>
+                    <li><a href="Index">home</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
@@ -86,11 +86,11 @@
                 <div class="cart_icon">
                     <a href="@Url.Action("Cart", "Web")">
                         <img src="../Images/bag.png" alt="">
-                        <div class="cart_num">2</div>
+                        <div class="cart_num">@Html.Raw((String)ViewBag.cart_num)</div>
                     </a>
                 </div>
                 <div class="cart_text">Cart</div>
-                <div class="cart_price">$39.99 (1)</div>
+                <div class="cart_price">@Html.Raw((String)ViewBag.cart_price)</div>
             </div>
         </div>
 
@@ -118,10 +118,10 @@
                                 <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
                                     <div class="product_categories">
                                         <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                            <li class="item_filter_btn" data-filter="*"><a href="#">All</a></li>
-                                            <li class="item_filter_btn" data-filter=".regular"><a href="#">Regular</a></li>
-                                            <li class="item_filter_btn" data-filter=".heavy"><a href="#">Heavy</a></li>
-                                            <li class="item_filter_btn" data-filter=".specialized"><a href="#">Specialized</a></li>
+                                            <li class="item_filter_btn" style="cursor: pointer;" data-filter="*">All</li>
+                                            <li class="item_filter_btn" style="cursor: pointer;" data-filter=".regular">Regular</li>
+                                            <li class="item_filter_btn" style="cursor: pointer;" data-filter=".heavy">Heavy</li>
+                                            <li class="item_filter_btn" style="cursor: pointer;" data-filter=".specialized">Specialized</li>
                                         </ul>
                                     </div>
                                 </div>
