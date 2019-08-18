@@ -67,3 +67,7 @@ function addToCart() {
         swal("Info", "Please choose a renting time!", "info");
     }
 }
+
+function home() {
+    window.location = "Index";
+}
