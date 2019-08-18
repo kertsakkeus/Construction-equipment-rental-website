@@ -34,7 +34,7 @@
                         <!-- Language Dropdown Menu -->
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <div class="language_flag"><img src="../Images/flag_estonia.png" alt="https://www.flaticon.com/authors/freepik"></div>
                                     <div class="dropdown_text">Estonian</div>
                                 </a>
@@ -49,7 +49,7 @@
 
                         <!-- Currencies Dropdown Menu -->
                         <ul>
-                            <li><a href="#"><div class="dropdown_text">USD</div></a></li>
+                            <li><a href=""><div class="dropdown_text">USD</div></a></li>
                         </ul>
 
                     </div>
@@ -68,14 +68,14 @@
             <nav class="sidebar_nav">
                 <ul>
                     <li><a href="@Url.Action("Index", "Web")">home</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">About</a></li>
                 </ul>
             </nav>
 
             <!-- Search -->
             <div class="search">
-                <form action="#" class="search_form" id="sidebar_search_form">
+                <form action="" class="search_form" id="sidebar_search_form">
                     <input type="text" class="search_input" placeholder="Search" required="required">
                     <button class="search_button"><i class="fa fa-search"></i></button>
                 </form>
@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="product_sidebar order-lg-2 order-1">
                                     <div class="product_name">@Html.Raw((String)ViewBag.product_name)</div>
-                                    <div class="product_price" id="product_price">$0</div>
+                                    <div class="product_price" id="product_price">0€</div>
                                     <div class="product_type" id="product_type">Type: @Html.Raw((String)ViewBag.product_type)</div>
                                     <div class="product_time">
                                         <div class="product_time_title">Select Renting time</div>
@@ -190,7 +190,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <button class="cart_button trans_200">add to cart</button>
+                                    <button class="cart_button trans_200" onclick="addToCart()">add to cart</button>
                                 </div>
                             </div>
                         </div>
@@ -235,13 +235,13 @@
                                     <div class="footer_title">questions</div>
                                     <div class="footer_list">
                                         <ul>
-                                            <li><a href="#">About us</a></li>
-                                            <li><a href="#">Track Orders</a></li>
-                                            <li><a href="#">Returns</a></li>
-                                            <li><a href="#">Jobs</a></li>
-                                            <li><a href="#">Shipping</a></li>
-                                            <li><a href="#">Partners</a></li>
-                                            <li><a href="#">Support</a></li>
+                                            <li><a href="">About us</a></li>
+                                            <li><a href="">Track Orders</a></li>
+                                            <li><a href="">Returns</a></li>
+                                            <li><a href="">Jobs</a></li>
+                                            <li><a href="">Shipping</a></li>
+                                            <li><a href="">Partners</a></li>
+                                            <li><a href="">Support</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -296,5 +296,24 @@
     <script src="../Plugins/Isotope/isotope.pkgd.min.js"></script>
     <script src="../Plugins/Isotope/fitcolumns.js"></script>
     <script type="text/javascript" src="../Scripts/product.js"></script>
+    <script type="text/javascript" >
+        function addToCart()
+        {
+            var id = document.URL.substring(document.URL.length - 1);
+            var price = document.getElementById("product_price").innerHTML;
+
+            price = price.substring(0, price.length - 1);
+
+            if (price != "0") {
+                document.cookie += " Id=" + id;
+                document.cookie += " Price=" + price;
+
+                console.log(document.cookie);
+            }
+            else {
+                alert("Please choose renting time!");
+            }
+        }
+    </script>
 </body>
 </html>
