@@ -131,67 +131,65 @@
                                     </div>
                                 </div>
                                 <div class="product_sidebar order-lg-2 order-1">
-                                    <form action="#" id="product_form" class="product_form">
-                                        <div class="product_name">@Html.Raw((String)ViewBag.product_name)</div>
-                                        <div class="product_price">$0</div>
-                                        <div class="product_type">Type: @Html.Raw((String)ViewBag.product_type)</div>
-                                        <div class="product_time">
-                                            <div class="product_time_title">Select Renting time</div>
-                                            <div class="product_time_list">
-                                                <ul>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_1" name="product_radio" class="regular_radio radio_1">
-                                                        <label for="radio_1">1 Day</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_2" name="product_radio" class="regular_radio radio_2">
-                                                        <label for="radio_2">2 Days</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_3" name="product_radio" class="regular_radio radio_3">
-                                                        <label for="radio_3">3 Days</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_4" name="product_radio" class="regular_radio radio_4">
-                                                        <label for="radio_4">4 Days</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_5" name="product_radio" class="regular_radio radio_5">
-                                                        <label for="radio_5">5 Days</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_6" name="product_radio" class="regular_radio radio_6">
-                                                        <label for="radio_6">6 Days</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_7" name="product_radio" class="regular_radio radio_7">
-                                                        <label for="radio_7">7 Days</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_8" name="product_radio" class="regular_radio radio_8">
-                                                        <label for="radio_8">2 Weeks</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_9" name="product_radio" class="regular_radio radio_9">
-                                                        <label for="radio_9">1 Month</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_10" name="product_radio" class="regular_radio radio_10">
-                                                        <label for="radio_10">3 Months</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_11" name="product_radio" class="regular_radio radio_11">
-                                                        <label for="radio_11">6 Months</label>
-                                                    </li>
-                                                    <li class="time">
-                                                        <input type="radio" id="radio_12" name="product_radio" class="regular_radio radio_12">
-                                                        <label for="radio_12">1 Year</label>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    <div class="product_name">@Html.Raw((String)ViewBag.product_name)</div>
+                                    <div class="product_price" id="product_price">$0</div>
+                                    <div class="product_type" id="product_type">Type: @Html.Raw((String)ViewBag.product_type)</div>
+                                    <div class="product_time">
+                                        <div class="product_time_title">Select Renting time</div>
+                                        <div class="product_time_list">
+                                            <ul>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_1" name="product_radio" class="regular_radio radio_1" onclick="setPrice(1)">
+                                                    <label for="radio_1">1 Day</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_2" name="product_radio" class="regular_radio radio_2" onclick="setPrice(2)">
+                                                    <label for="radio_2">2 Days</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_3" name="product_radio" class="regular_radio radio_3" onclick="setPrice(3)">
+                                                    <label for="radio_3">3 Days</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_4" name="product_radio" class="regular_radio radio_4" onclick="setPrice(4)">
+                                                    <label for="radio_4">4 Days</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_5" name="product_radio" class="regular_radio radio_5" onclick="setPrice(5)">
+                                                    <label for="radio_5">5 Days</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_6" name="product_radio" class="regular_radio radio_6" onclick="setPrice(6)">
+                                                    <label for="radio_6">6 Days</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_7" name="product_radio" class="regular_radio radio_7" onclick="setPrice(7)">
+                                                    <label for="radio_7">7 Days</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_8" name="product_radio" class="regular_radio radio_8" onclick="setPrice(14)">
+                                                    <label for="radio_8">2 Weeks</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_9" name="product_radio" class="regular_radio radio_9" onclick="setPrice(30)">
+                                                    <label for="radio_9">1 Month</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_10" name="product_radio" class="regular_radio radio_10" onclick="setPrice(90)">
+                                                    <label for="radio_10">3 Months</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_11" name="product_radio" class="regular_radio radio_11" onclick="setPrice(180)">
+                                                    <label for="radio_11">6 Months</label>
+                                                </li>
+                                                <li class="time">
+                                                    <input type="radio" id="radio_12" name="product_radio" class="regular_radio radio_12" onclick="setPrice(365)">
+                                                    <label for="radio_12">1 Year</label>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <button class="cart_button trans_200">add to cart</button>
-                                    </form>
+                                    </div>
+                                    <button class="cart_button trans_200">add to cart</button>
                                 </div>
                             </div>
                         </div>
@@ -297,5 +295,6 @@
     <script src="../Plugins/Isotope/isotope.pkgd.min.js"></script>
     <script src="../Plugins/Isotope/fitcolumns.js"></script>
     <script src="../Scripts/product.js"></script>
+    <script type="text/javascript" src="../Scripts/price.js"></script>
 </body>
 </html>

@@ -28,6 +28,7 @@ namespace Bondora_HomeTask.Controllers
             ViewBag.product_name = ProductInfo[0];
             ViewBag.product_type = ProductInfo[1];
             ViewBag.product_image = ProductInfo[2];
+
             return View();
         }
 

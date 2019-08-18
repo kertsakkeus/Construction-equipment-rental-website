@@ -247,6 +247,7 @@
     <Content Include="Scripts\categories.js" />
     <Content Include="Scripts\checkout.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\price.js" />
     <Content Include="Scripts\product.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
