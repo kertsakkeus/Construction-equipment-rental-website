@@ -191,7 +191,6 @@
     <Content Include="Content\invoice.css" />
     <Content Include="Content\product.css" />
     <Content Include="Content\product_responsive.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="Content\sweetalert.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -319,6 +318,7 @@
     <Content Include="Plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Plugins\font-awesome-4.7.0\scss\_variables.scss" />
     <Content Include="Views\Web\Invoice.cshtml" />
+    <Content Include="Views\Web\Error.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

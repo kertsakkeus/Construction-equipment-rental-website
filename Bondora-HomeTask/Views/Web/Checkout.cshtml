@@ -332,29 +332,5 @@
     <script src="../Plugins/easing/easing.js"></script>
     <script src="../Plugins/parallax-js-master/parallax.min.js"></script>
     <script type="text/javascript" src="../Scripts/checkout.js"></script>
-    <script type="text/javascript">
-
-        var checkedRadioButton;
-
-        function checkedRadio(name)
-        {
-            checkedRadioButton = name;
-        }
-
-        function makeInvoice()
-        {
-            var name = document.getElementById("checkout_name").value;
-            var last_name = document.getElementById("checkout_last_name").value;
-            var country = document.getElementById("checkout_country").value;
-            var address = document.getElementById("checkout_address").value;
-            var zipcode = document.getElementById("checkout_zipcode").value;
-            var city = document.getElementById("checkout_city").value;
-            var province = document.getElementById("checkout_province").value;
-            var phone = document.getElementById("checkout_phone").value;
-            var email = document.getElementById("checkout_email").value;
-
-            console.log(name + last_name + country + address + zipcode + city + province + phone + email);
-        }
-    </script>
 </body>
 </html>

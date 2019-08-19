@@ -84,7 +84,7 @@ namespace Bondora_HomeTask.Models
 
                 cartItemsList = CookieManager.GetCookie();
 
-                string[] cartItems = new string[] { "", "0", "0€", "" };
+                string[] cartItems = new string[] { "", "0", "0€", "", "" };
 
                 if (cartItemsList != null)
                 {
@@ -114,6 +114,14 @@ namespace Bondora_HomeTask.Models
                         "<div class='cart_extra_total_title'>" + itemsList[i].Name + " | " + TimeToDate.GetDate(Convert.ToInt32(cartItemsList[j].Time)) + "</div>" +
                         "<div class='cart_extra_total_value ml-auto'>" + cartItemsList[j].Price + "€" + "</div>" +
                     "</li>";
+
+                                cartItems[4] = cartItems[4] + "<tr>" +
+                                "<td class='no'>" + j + "</td>" +
+                                "<td class='text-center'><h3>" + itemsList[i].Name + "</h3></td>" +
+                                "<td class='text-center unit'>" + PriceCalculation.EquipmentPrice(itemsList[i].Type, 1) + "€" + "</td>" +
+                                "<td class='text-center qty'>" + TimeToDate.GetDate(Convert.ToInt32(cartItemsList[j].Time)) + "</td>" +
+                                "<td class='text-center total'>" + cartItemsList[j].Price + "€" + "</td>" +
+                            "</tr>";
                             }
                         }
                     }
