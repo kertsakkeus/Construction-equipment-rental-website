@@ -94,7 +94,7 @@ namespace Bondora_HomeTask.Controllers
             ViewBag.cart_price = cartItems[2];
             ViewBag.cart_items = cartItems[4];
 
-            return View();
+            return View("Index");
         }
     }
 }
