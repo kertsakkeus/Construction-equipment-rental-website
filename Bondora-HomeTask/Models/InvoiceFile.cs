@@ -17,7 +17,7 @@ namespace Bondora_HomeTask.Models
 
                 invoiceItems = await ApiRequests.GetInvoiceInfo();
 
-                string path = @"C:\Users\Kert\Desktop\text.txt";
+                string path = @"C:\Users\Kert\Desktop\invoice.txt";
 
                 if (invoiceItems != null)
                 {
