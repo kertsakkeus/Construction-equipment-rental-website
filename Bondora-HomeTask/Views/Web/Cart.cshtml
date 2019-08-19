@@ -10,6 +10,7 @@
     <link href="../Plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../Plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="../Plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="../Content/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="../Plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="../Content/cart.css">
     <link rel="stylesheet" type="text/css" href="../Content/cart_responsive.css">
@@ -160,7 +161,7 @@
                                             <div class="cart_extra_total_value ml-auto">@Html.Raw((String)ViewBag.cart_price)</div>
                                         </li>
                                     </ul>
-                                    <div class="checkout_button trans_200"><a href="@Url.Action("Checkout", "Web")">proceed to checkout</a></div>
+                                    <div class="checkout_button trans_200" onclick="checkout()"><a>proceed to checkout</a></div>
                                 </div>
                             </div>
                         </div>
@@ -262,11 +263,8 @@
     <script src="../Plugins/greensock/ScrollToPlugin.min.js"></script>
     <script src="../Plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="../Plugins/easing/easing.js"></script>
+    <script src="../Scripts/sweetalert-min.js"></script>
     <script src="../Plugins/parallax-js-master/parallax.min.js"></script>
-    <script type="text/javascript">
-        function deleteCookies() {
-            document.cookie = "Id" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        }
-    </script>
+    <script src="../Scripts/cart.js"></script>
 </body>
 </html>

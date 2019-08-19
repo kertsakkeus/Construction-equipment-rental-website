@@ -1,7 +1,7 @@
 ﻿var checkedRadioButton;
 
-function checkedRadio(name) {
-    checkedRadioButton = name;
+function checkedRadio(isChecked) {
+    checkedRadioButton = isChecked;
 }
 
 function makeInvoice() {
@@ -14,7 +14,15 @@ function makeInvoice() {
     var province = document.getElementById("checkout_province").value;
     var phone = document.getElementById("checkout_phone").value;
     var email = document.getElementById("checkout_email").value;
+    var invoice;
+
+    if (checkedRadioButton == true) {
+        invoice = "true";
+    }
+    else {
+        invoice = "false";
+    }
 
     window.location = "Invoice?name=" + name + "&" + "last_name=" + last_name + "&" + "country=" + country + "&" + "address=" + address + "&" +
-        "zipcode=" + zipcode + "&" + "city=" + city + "&" + "province=" + province + "&" + "phone=" + phone + "&" + "email=" + email;
+        "zipcode=" + zipcode + "&" + "city=" + city + "&" + "province=" + province + "&" + "phone=" + phone + "&" + "email=" + email + "&" + "invoice=" + invoice;
 }

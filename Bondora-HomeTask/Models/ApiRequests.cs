@@ -84,7 +84,7 @@ namespace Bondora_HomeTask.Models
 
                 cartItemsList = CookieManager.GetCookie();
 
-                string[] cartItems = new string[] { "", "0", "0€", "", "" };
+                string[] cartItems = new string[] { "", "0", "0€", "" };
 
                 if (cartItemsList != null)
                 {
@@ -115,13 +115,6 @@ namespace Bondora_HomeTask.Models
                         "<div class='cart_extra_total_value ml-auto'>" + cartItemsList[j].Price + "€" + "</div>" +
                     "</li>";
 
-                                cartItems[4] = cartItems[4] + "<tr>" +
-                                "<td class='no'>" + j + "</td>" +
-                                "<td class='text-center'><h3>" + itemsList[i].Name + "</h3></td>" +
-                                "<td class='text-center unit'>" + PriceCalculation.EquipmentPrice(itemsList[i].Type, 1) + "€" + "</td>" +
-                                "<td class='text-center qty'>" + TimeToDate.GetDate(Convert.ToInt32(cartItemsList[j].Time)) + "</td>" +
-                                "<td class='text-center total'>" + cartItemsList[j].Price + "€" + "</td>" +
-                            "</tr>";
                             }
                         }
                     }
@@ -138,6 +131,42 @@ namespace Bondora_HomeTask.Models
                     return cartItems;
                 }
                 return cartItems;
+            }
+            catch
+            {
+                throw new HttpException(404, "Not Found");
+            }
+        }
+
+        public static async Task<List<InvoiceItems>> GetInvoiceInfo()
+        {
+            try
+            {
+                List<InvoiceItems> invoiceItems = new List<InvoiceItems>();
+                List<CartItems> cartItemsList = new List<CartItems>();
+
+                cartItemsList = CookieManager.GetCookie();
+
+                if (cartItemsList != null)
+                {
+                    var jsonArray = JArray.Parse(await APIRequest());
+                    int count = jsonArray.Count();
+
+                    List<Items> itemsList = jsonArray.ToObject<List<Items>>();
+
+                    for (int j = 0; j < cartItemsList.Count; j++)
+                    {
+                        for (int i = 0; i < count; i++)
+                        {
+                            if (cartItemsList[j].Id == itemsList[i].Id)
+                            {
+                                invoiceItems.Add(new InvoiceItems { Name = itemsList[i].Name, Price = cartItemsList[j].Price, Time = TimeToDate.GetDate(Convert.ToInt32(cartItemsList[j].Time)), Type = itemsList[i].Type });
+                            }
+                        }
+                    }
+                    return invoiceItems;
+                }
+                return null;
             }
             catch
             {

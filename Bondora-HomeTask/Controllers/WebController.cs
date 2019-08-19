@@ -65,36 +65,27 @@ namespace Bondora_HomeTask.Controllers
             return View();
         }
 
-        public async Task<ActionResult> Invoice(string name, string last_name, string country, string address, string zipcode, string city, string province, string phone, string email)
+        public async Task<ActionResult> Invoice(string name, string last_name, string country, string address, string zipcode, string city, string province, string phone, string email, string invoice)
         {
             string url = HttpContext.Request.Url.AbsoluteUri;
+            string respond;
 
             if (!url.Contains("?"))
             {
                 return View("Error");
             }
+            if (invoice == "true")
+            {
+                respond = await InvoiceFile.MakeInvoice(name, last_name, country, address, zipcode, city, province, phone, email);
+            }
+            else
+            {
+                respond = "Thank you for your purchase!";
+            }
 
-            DateTime today = DateTime.Today;
-            string date = today.ToString();
-            string due_date;
+            ViewBag.respond = respond;
 
-            date = date.Substring(0, date.Length - 9);
-
-            due_date = today.AddDays(5).ToString();
-            due_date = due_date.Substring(0, due_date.Length - 9);
-
-            string[] cartItems = await ApiRequests.GetCartItems();
-
-            ViewBag.name = name + " " + last_name;
-            ViewBag.address = address + ", " + zipcode + " " + city + ", " + province + ", " + country;
-            ViewBag.email = email;
-            ViewBag.phone = phone;
-            ViewBag.date = date;
-            ViewBag.due_date = due_date;
-            ViewBag.cart_price = cartItems[2];
-            ViewBag.cart_items = cartItems[4];
-
-            return View("Index");
+            return View();
         }
     }
 }

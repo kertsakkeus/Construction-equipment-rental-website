@@ -1,67 +1,22 @@
-﻿<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="../Content/bootstrap-4.1.3/bootstrap.min.js"></script>
-<script src="../Scripts/jquery-3.2.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../Content/invoice.css">
-<div id="invoice">
-    <div class="toolbar hidden-print">
-        <hr>
-    </div>
-    <div class="invoice overflow-auto">
-        <div style="min-width: 600px">
-            <header>
-                <div class="row">
-                    <div class="col">
-                            <img src="../Images/logo.png" width="162" height="150" data-holder-rendered="true" />
-                        </a>
-                    </div>
-                    <div class="col company-details">
-                        <h2 class="name">
-                            Test OÜ
-                        </h2>
-                        <div>Paldiski maantee 203, 13517 Tallinn, Estonia</div>
-                        <div>+372 5854 8945</div>
-                        <div>test@test.com</div>
-                    </div>
-                </div>
-            </header>
-            <main>
-                <div class="row contacts">
-                    <div class="col invoice-to">
-                        <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">@Html.Raw((String)ViewBag.name)</h2>
-                        <div class="address">@Html.Raw((String)ViewBag.address)</div>
-                        <div class="email">@Html.Raw((String)ViewBag.email)</div>
-                        <div class="phone">@Html.Raw((String)ViewBag.phone)</div>
-                    </div>
-                    <div class="col invoice-details">
-                        <h1 class="invoice-id">INVOICE #1</h1>
-                        <div class="date">Date of Invoice: @Html.Raw((String)ViewBag.date)</div>
-                        <div class="date">Due Date: @Html.Raw((String)ViewBag.due_date)</div>
-                    </div>
-                </div>
-                <table border="0" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th class="text-center">Product</th>
-                            <th class="text-center">PRICE (1 DAY)</th>
-                            <th class="text-center">TIME</th>
-                            <th class="text-center">TOTAL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @Html.Raw((String)ViewBag.cart_items)
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">TOTAL</td>
-                            <td>@Html.Raw((String)ViewBag.cart_price)</td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <div class="thanks">Thank you for your purchase!</div>
-            </main>
-        </div>
-    </div>
-</div>
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order Success</title>
+</head>
+<body onload="goToFirstPage()">
+    <h1>@Html.Raw((String)ViewBag.respond)</h1>
+    <p>You will be redirected back to the front page immediately</p>
+
+    <script type="text/javascript">
+        function goToFirstPage()
+        {
+            setTimeout(function () {
+                document.cookie = "Id" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                window.location = "Index";
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

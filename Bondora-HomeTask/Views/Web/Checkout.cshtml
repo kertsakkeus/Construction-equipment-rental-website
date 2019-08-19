@@ -200,23 +200,16 @@
                                         <!-- Payment Options -->
                                         <div class="payment">
                                             <div class="payment_options">
-                                                <label class="payment_option clearfix" onclick="checkedRadio('PayPal')">
-                                                    Paypal
-                                                    <input type="radio" name="radio">
+                                                <label class="payment_option clearfix" style="cursor: default;">
+                                                    Do you want to get an invoice?
+                                                </label>
+                                                <label class="payment_option clearfix" onclick="checkedRadio(true)">
+                                                    Yes
+                                                    <input type="radio" checked="checked" name="radio">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <label class="payment_option clearfix" onclick="checkedRadio('Cash')">
-                                                    Cash on delivery
-                                                    <input type="radio" name="radio">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="payment_option clearfix" onclick="checkedRadio('Card')">
-                                                    Credit card
-                                                    <input type="radio" name="radio">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="payment_option clearfix" onclick="checkedRadio('Bank')">
-                                                    Direct bank transfer
+                                                <label class="payment_option clearfix" onclick="checkedRadio(false)">
+                                                    No
                                                     <input type="radio" checked="checked" name="radio">
                                                     <span class="checkmark"></span>
                                                 </label>
