@@ -191,7 +191,6 @@
     <Content Include="Content\categories_responsive.css" />
     <Content Include="Content\checkout.css" />
     <Content Include="Content\checkout_responsive.css" />
-    <Content Include="Content\invoice.css" />
     <Content Include="Content\product.css" />
     <Content Include="Content\product_responsive.css" />
     <Content Include="Content\sweetalert.css" />
