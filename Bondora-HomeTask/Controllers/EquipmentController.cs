@@ -19,7 +19,6 @@ namespace Bondora_HomeTask.Controllers
             new Equipment  { Id = 2, Name = "Komatsu crane", Type = Types.Heavy, Image = "product_3.jpg" },
             new Equipment  { Id = 3, Name = "Volvo steamroller", Type = Types.Regular, Image = "product_4.jpg" },
             new Equipment  { Id = 4, Name = "Bosch jackhammer", Type = Types.Specialized, Image = "product_5.jpg" },
-            new Equipment  { Id = 5, Name = "Stella", Type = Types.Heavy, Image = "product_5.jpg" }
         };
         
         // GET: api/equipment
