@@ -64,7 +64,7 @@ function addToCart() {
         swal("Success", "Product successfully added to your cart", "success");
     }
     else {
-        swal("Info", "Please choose a renting time!", "info");
+        swal("Info", "Please select a renting time!", "info");
     }
 }
 
