@@ -188,8 +188,10 @@
     <Content Include="Content\categories_responsive.css" />
     <Content Include="Content\checkout.css" />
     <Content Include="Content\checkout_responsive.css" />
+    <Content Include="Content\invoice.css" />
     <Content Include="Content\product.css" />
     <Content Include="Content\product_responsive.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\sweetalert.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -247,6 +249,7 @@
     <Content Include="Plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
     <Content Include="Plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Scripts\checkout.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\product.js" />
     <Content Include="Scripts\categories.js" />
@@ -315,6 +318,7 @@
     <Content Include="Plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="Plugins\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="Plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Views\Web\Invoice.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

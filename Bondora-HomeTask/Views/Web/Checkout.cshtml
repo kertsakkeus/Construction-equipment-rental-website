@@ -172,14 +172,14 @@
                                                 </select>
                                             </div>
                                             <div>
-                                                <!-- Phone no -->
+                                                <!-- Phone number -->
                                                 <label for="checkout_phone">Phone number*</label>
                                                 <input type="phone" id="checkout_phone" class="checkout_input" required="required">
                                             </div>
                                             <div>
                                                 <!-- Email -->
                                                 <label for="checkout_email">Email Address*</label>
-                                                <input type="phone" id="checkout_email" class="checkout_input" required="required">
+                                                <input type="text" id="checkout_email" class="checkout_input" required="required">
                                             </div>
                                         </form>
                                     </div>
@@ -200,22 +200,22 @@
                                         <!-- Payment Options -->
                                         <div class="payment">
                                             <div class="payment_options">
-                                                <label class="payment_option clearfix">
+                                                <label class="payment_option clearfix" onclick="checkedRadio('PayPal')">
                                                     Paypal
                                                     <input type="radio" name="radio">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <label class="payment_option clearfix">
+                                                <label class="payment_option clearfix" onclick="checkedRadio('Cash')">
                                                     Cash on delivery
                                                     <input type="radio" name="radio">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <label class="payment_option clearfix">
+                                                <label class="payment_option clearfix" onclick="checkedRadio('Card')">
                                                     Credit card
                                                     <input type="radio" name="radio">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <label class="payment_option clearfix">
+                                                <label class="payment_option clearfix" onclick="checkedRadio('Bank')">
                                                     Direct bank transfer
                                                     <input type="radio" checked="checked" name="radio">
                                                     <span class="checkmark"></span>
@@ -226,7 +226,7 @@
                                         <!-- Order Text -->
                                         <div class="order_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra temp or so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</div>
 
-                                        <div class="checkout_button trans_200"><a href="@Url.Action("Checkout", "Web")">place order</a></div>
+                                        <div class="checkout_button trans_200" onclick="makeInvoice()"><a href="#">place order</a></div>
                                     </div>
                                 </div>
 
@@ -331,5 +331,30 @@
     <script src="../Plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="../Plugins/easing/easing.js"></script>
     <script src="../Plugins/parallax-js-master/parallax.min.js"></script>
+    <script type="text/javascript" src="../Scripts/checkout.js"></script>
+    <script type="text/javascript">
+
+        var checkedRadioButton;
+
+        function checkedRadio(name)
+        {
+            checkedRadioButton = name;
+        }
+
+        function makeInvoice()
+        {
+            var name = document.getElementById("checkout_name").value;
+            var last_name = document.getElementById("checkout_last_name").value;
+            var country = document.getElementById("checkout_country").value;
+            var address = document.getElementById("checkout_address").value;
+            var zipcode = document.getElementById("checkout_zipcode").value;
+            var city = document.getElementById("checkout_city").value;
+            var province = document.getElementById("checkout_province").value;
+            var phone = document.getElementById("checkout_phone").value;
+            var email = document.getElementById("checkout_email").value;
+
+            console.log(name + last_name + country + address + zipcode + city + province + phone + email);
+        }
+    </script>
 </body>
 </html>

@@ -64,5 +64,11 @@ namespace Bondora_HomeTask.Controllers
 
             return View();
         }
+
+        public ActionResult Invoice()
+        {
+
+            return View();
+        }
     }
 }
