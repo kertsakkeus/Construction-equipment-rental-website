@@ -69,14 +69,16 @@ namespace Bondora_HomeTask.Controllers
         {
             string url = HttpContext.Request.Url.AbsoluteUri;
             string respond;
+            string path = ControllerContext.HttpContext.Server.MapPath("");
 
             if (!url.Contains("?"))
             {
                 return View("Error");
             }
+
             if (invoice == "true")
             {
-                respond = await InvoiceFile.MakeInvoice(name, last_name, country, address, zipcode, city, province, phone, email);
+                respond = await InvoiceFile.MakeInvoice(name, last_name, country, address, zipcode, city, province, phone, email, path);
             }
             else
             {

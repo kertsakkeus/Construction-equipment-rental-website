@@ -9,7 +9,7 @@ namespace Bondora_HomeTask.Models
 {
     public class InvoiceFile
     {
-        public static async Task<string> MakeInvoice(string name, string last_name, string country, string address, string zipcode, string city, string province, string phone, string email)
+        public static async Task<string> MakeInvoice(string name, string last_name, string country, string address, string zipcode, string city, string province, string phone, string email, string currentPath)
         {
             try
             {
@@ -17,7 +17,7 @@ namespace Bondora_HomeTask.Models
 
                 invoiceItems = await ApiRequests.GetInvoiceInfo();
 
-                string path = @"C:\Users\Kert\Desktop\invoice.txt";
+                string path = currentPath.Substring(0, currentPath.Length - 20) + "invoice.txt";
 
                 if (invoiceItems != null)
                 {
