@@ -173,6 +173,7 @@
     <Compile Include="Models\InvoiceItems.cs" />
     <Compile Include="Models\Items.cs" />
     <Compile Include="Models\InvoiceFile.cs" />
+    <Compile Include="Models\LoyaltyPointsManager.cs" />
     <Compile Include="Models\PriceCalculation.cs" />
     <Compile Include="Models\TimeToDate.cs" />
     <Compile Include="Models\TypeColorController.cs" />

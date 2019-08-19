@@ -25,6 +25,7 @@ namespace Bondora_HomeTask.Models
                     string date = today.ToString();
                     string due_date;
                     int totalPrice = 0;
+                    int loyaltyPoints = 0;
 
                     date = date.Substring(0, date.Length - 9);
 
@@ -60,12 +61,14 @@ namespace Bondora_HomeTask.Models
                                 sw.WriteLine("Time: " + invoiceItems[i].Time);
                                 sw.WriteLine("Total: " + invoiceItems[i].Price + "€" + "\n");
 
+                                loyaltyPoints = loyaltyPoints + LoyaltyPointsManager.GetPoints(invoiceItems[i].Type);
                                 totalPrice = totalPrice + Convert.ToInt32(invoiceItems[i].Price);
                             }
 
                             sw.WriteLine("----------------------------TOTAL---------------------------------\n");
 
-                            sw.WriteLine("Total: " + totalPrice + "€\n\n");
+                            sw.WriteLine("Total: " + totalPrice + "€");
+                            sw.WriteLine("Loyalty points received: " + loyaltyPoints + "\n\n");
                             sw.WriteLine("Thank you for your purchase!");
                         }
                     }

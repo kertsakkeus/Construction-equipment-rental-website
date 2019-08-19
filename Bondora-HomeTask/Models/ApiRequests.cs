@@ -84,7 +84,8 @@ namespace Bondora_HomeTask.Models
 
                 cartItemsList = CookieManager.GetCookie();
 
-                string[] cartItems = new string[] { "", "0", "0€", "" };
+                string[] cartItems = new string[] { "", "0", "0€", "", "" };
+                int loyaltyPoints = 0;
 
                 if (cartItemsList != null)
                 {
@@ -115,6 +116,7 @@ namespace Bondora_HomeTask.Models
                         "<div class='cart_extra_total_value ml-auto'>" + cartItemsList[j].Price + "€" + "</div>" +
                     "</li>";
 
+                                loyaltyPoints = loyaltyPoints + LoyaltyPointsManager.GetPoints(itemsList[i].Type);
                             }
                         }
                     }
@@ -127,6 +129,10 @@ namespace Bondora_HomeTask.Models
 
                     cartItems[1] = cartItemsList.Count.ToString();
                     cartItems[2] = totalPrice.ToString() + "€";
+                    cartItems[4] = "<li class='d-flex flex-row align-items-center justify-content-start'>" +
+                        "<div class='cart_extra_total_title'>Loyalty points</div>" +
+                        "<div class='cart_extra_total_value ml-auto'>" + loyaltyPoints.ToString() + "</div>" +
+                    "</li>";
 
                     return cartItems;
                 }

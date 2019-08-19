@@ -49,7 +49,7 @@ namespace Bondora_HomeTask.Controllers
             ViewBag.cartItems = cartItems[0];
             ViewBag.cart_num = cartItems[1];
             ViewBag.cart_price = cartItems[2];
-            ViewBag.cart_item = cartItems[3];
+            ViewBag.cart_item = cartItems[3] + cartItems[4];
 
             return View();
         }
@@ -60,7 +60,7 @@ namespace Bondora_HomeTask.Controllers
 
             ViewBag.cart_num = cartItems[1];
             ViewBag.cart_price = cartItems[2];
-            ViewBag.cart_item = cartItems[3];
+            ViewBag.cart_item = cartItems[3] + cartItems[4];
 
             return View();
         }
