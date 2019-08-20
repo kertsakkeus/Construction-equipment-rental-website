@@ -10,8 +10,8 @@ namespace Bondora_HomeTask.Tests
         [TestMethod]
         public void RentHeavyProduct()
         {
-            var xd = PriceCalculation.EquipmentPrice(Types.Heavy, 5);
-            Assert.AreEqual(400, xd);
+            var price = PriceCalculation.EquipmentPrice(Types.Heavy, 5);
+            Assert.AreEqual(400, price);
         }
     }
 }
