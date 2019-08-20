@@ -62,7 +62,7 @@ namespace Bondora_HomeTask.Models
                         "</div>" +
                         "<div class='product_content text-center'>" +
                             "<div class='product_title'><a href = 'Product?id=" + itemsList[i].Id + "'>" + itemsList[i].Name + "</a></div>" +
-                            "<div class='product_price'>" + PriceCalculation.EquipmentPrice(itemsList[i].Type, 1) + "€" + "</div>" +
+                            "<div class='product_price'>" + PriceCalculation.EquipmentPrice(itemsList[i].Type, 1) + "€ (1 Day)" + "</div>" +
                         "</div>" +
                     "</div>" +
                 "</div>";
