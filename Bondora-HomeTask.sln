@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bondora-HomeTask", "Bondora-HomeTask\Bondora-HomeTask.csproj", "{ACC08C07-4DAB-4251-88D8-F46CE7BF5E0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bondora-HomeTask.Tests", "Bondora-HomeTask.Tests\Bondora-HomeTask.Tests.csproj", "{3BCD032A-411F-4649-A671-6B8DC83E1058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ACC08C07-4DAB-4251-88D8-F46CE7BF5E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC08C07-4DAB-4251-88D8-F46CE7BF5E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACC08C07-4DAB-4251-88D8-F46CE7BF5E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BCD032A-411F-4649-A671-6B8DC83E1058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BCD032A-411F-4649-A671-6B8DC83E1058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BCD032A-411F-4649-A671-6B8DC83E1058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BCD032A-411F-4649-A671-6B8DC83E1058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
