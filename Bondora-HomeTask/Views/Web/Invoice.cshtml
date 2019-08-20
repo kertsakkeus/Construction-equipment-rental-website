@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order Success</title>
+</head>
+<body onload="goToFirstPage()">
+    <h1>@Html.Raw((String)ViewBag.respond)</h1>
+    <p>You will be redirected back to the front page immediately</p>
+
+    <script type="text/javascript">
+        function goToFirstPage()
+        {
+            setTimeout(function () {
+                document.cookie = "Id" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                window.location = "Index";
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
