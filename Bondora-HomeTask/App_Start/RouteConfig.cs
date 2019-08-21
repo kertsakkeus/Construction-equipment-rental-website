@@ -14,10 +14,14 @@ namespace Bondora_HomeTask
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "OnlyActionRoute",
+                url: "{action}",
+                defaults: new { controller = "Web", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Web", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Web", action = "Index", id = UrlParameter.Optional });
         }
     }
 }
