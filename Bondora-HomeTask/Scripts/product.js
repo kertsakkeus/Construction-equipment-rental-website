@@ -2,7 +2,7 @@
 
 function setPrice(time) {
     if (time == 13) {
-        swal("Enter renting time in days:", {
+        swal("Enter renting time (in days)", {
             content: "input",
         })
             .then((value) => {
