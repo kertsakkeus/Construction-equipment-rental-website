@@ -13,9 +13,6 @@ function deleteProduct(number) {
 
     var cookies = document.cookie;
 
-    console.log(cookies);
-    console.log(number);
-
     var items = cookies.split('|');
 
     items.splice(number, 1);
