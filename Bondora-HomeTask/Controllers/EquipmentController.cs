@@ -12,7 +12,7 @@ namespace Bondora_HomeTask.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class EquipmentController : ApiController
     {
-        private Equipment[] equipment= new Equipment[]
+        public Equipment[] equipment= new Equipment[]
         {
             new Equipment  { Id = 0, Name = "Caterpillar bulldozer", Type = Types.Regular, Image = "product_1.jpg"},
             new Equipment  { Id = 1, Name = "KamAZ truck", Type = Types.Regular, Image = "product_2.jpg" },
