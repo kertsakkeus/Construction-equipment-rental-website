@@ -37,17 +37,5 @@ namespace Bondora_HomeTask.Controllers
             }
             return product;
         }
-
-        // GET: api/equipment?id=5&time=2
-        public Equipment GetEquipmentPrice(int id, int time)
-        {
-            var product = equipment.FirstOrDefault((p) => p.Id == id);
-            if (product == null)
-            {
-                return null;
-            }
-            product.Price = PriceCalculation.EquipmentPrice(product.Type, time);
-            return product;
-        }
     }
 }
