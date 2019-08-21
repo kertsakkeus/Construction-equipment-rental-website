@@ -10,14 +10,28 @@ namespace Bondora_HomeTask.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void RentHeavyProduct()
+        public void RentHeavyProductForFiveDays()
         {
             var price = PriceCalculation.EquipmentPrice(Types.Heavy, 5);
             Assert.AreEqual(400, price);
         }
 
         [TestMethod]
-        public void ProductName()
+        public void RentRegularProductForNineDays()
+        {
+            var price = PriceCalculation.EquipmentPrice(Types.Regular, 9);
+            Assert.AreEqual(500, price);
+        }
+
+        [TestMethod]
+        public void RentSpezializedProductForTwoDays()
+        {
+            var price = PriceCalculation.EquipmentPrice(Types.Specialized, 2);
+            Assert.AreEqual(120, price);
+        }
+
+        [TestMethod]
+        public void CheckIfIdEqualsWithProductName()
         {
             var controller = new EquipmentController();
             string name = controller.equipment[2].Name;
