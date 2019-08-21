@@ -39,7 +39,7 @@ namespace Bondora_HomeTask.Models
             }
             else
             {
-                return "1 Day";
+                return time + " Days";
             }
         }
     }
