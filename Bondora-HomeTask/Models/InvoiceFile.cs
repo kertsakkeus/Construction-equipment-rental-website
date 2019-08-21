@@ -17,7 +17,7 @@ namespace Bondora_HomeTask.Models
 
                 invoiceItems = await ApiRequests.GetInvoiceInfo();
 
-                string path = currentPath.Substring(0, currentPath.Length - 20) + "invoice.txt";
+                string path = currentPath.Substring(0, currentPath.Length - 16) + "invoice.txt";
 
                 if (invoiceItems != null)
                 {
