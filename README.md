@@ -3,7 +3,8 @@
 1. Clone this repository to your computer.
 2. Open project in Visual Studio.
 3. Make sure that Port: '61388' is not occupied by any other process.
-4. Run the project.
+4. Clean the solution and then build it
+5. Run the project.
 
 ## Invoice
 
