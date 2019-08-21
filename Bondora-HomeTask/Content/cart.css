@@ -1205,6 +1205,20 @@ section
 {
 	color: #006ccb;
 }
+.product_delete i 
+{
+    color: #FF0000;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+.product_delete i:hover
+{
+    color: #FF4747;
+}
 .product_text
 {
 	font-size: 16px;
