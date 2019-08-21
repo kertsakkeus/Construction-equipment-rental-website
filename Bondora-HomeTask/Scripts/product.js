@@ -1,6 +1,29 @@
 ﻿var checkedRadioButton;
 
 function setPrice(time) {
+    if (time == 13) {
+        swal("Write something here:", {
+            content: "input",
+        })
+            .then((value) => {
+                time = value;
+
+                if (value == 1) {
+                    document.getElementById("radio_13_label").innerHTML = "Custom (" + value + " Day)";
+                }
+                else {
+                    document.getElementById("radio_13_label").innerHTML = "Custom (" + value + " Days)";
+                }
+
+                getPrice(time);
+            });
+    }
+    else {
+        getPrice(time);
+    }
+}
+
+function getPrice(time) {
     var price = document.getElementById("product_price");
     var type = document.getElementById("product_type").innerHTML;
 
