@@ -21,16 +21,8 @@ namespace Bondora_HomeTask.Models
 
                 if (invoiceItems != null)
                 {
-                    DateTime today = DateTime.Today;
-                    string date = today.ToString();
-                    string due_date;
                     int totalPrice = 0;
                     int loyaltyPoints = 0;
-
-                    date = date.Substring(0, date.Length - 9);
-
-                    due_date = today.AddDays(5).ToString();
-                    due_date = due_date.Substring(0, due_date.Length - 9);
 
                     if (!File.Exists(path))
                     {
