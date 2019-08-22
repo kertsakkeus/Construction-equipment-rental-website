@@ -12,8 +12,7 @@
 5. Menu
 6. Home
 7. Product
-8. Newsletter
-9. Footer
+8. Footer
 
 
 ******************************/
@@ -1307,119 +1306,7 @@ section
 }
 
 /*********************************
-8. Newsletter
-*********************************/
-
-.newsletter
-{
-	width: 100%;
-	padding-top: 95px;
-	padding-bottom: 81px;
-}
-.newsletter_title
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 18px;
-	font-weight: 600;
-	color: #FFFFFF;
-	line-height: 1.2;
-	text-transform: uppercase;
-}
-.newsletter_subtitle
-{
-	font-family: 'Poppins', sans-serif;
-	font-size: 14px;
-	font-weight: 400;
-	color: #FFFFFF;
-	margin-top: 14px;
-}
-.newsletter_form_container
-{
-	margin-top: 94px;
-}
-.newsletter_form
-{
-	width: 100%;
-}
-.newsletter_input
-{
-	width: 100%;
-	height: 45px;
-	background: transparent;
-	border: none;
-	outline: none;
-	border-bottom: solid 2px #FFFFFF;
-	color: #FFFFFF;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.newsletter_input:hover,
-.newsletter_input:focus
-{
-	border-bottom: solid 2px #bbe432;
-}
-.newsletter_button
-{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 138px;
-	height: 45px;
-	background: #bbe432;
-	color: #1a1a1a;
-	font-size: 14px;
-	font-weight: 700;
-	text-transform: uppercase;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.newsletter_input::-webkit-input-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input:-moz-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input::-moz-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-} 
-.newsletter_input:-ms-input-placeholder
-{ 
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input::input-placeholder
-{
-	font-size: 12px !important;
-	font-weight: 400 !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-
-/*********************************
-9. Footer
+8. Footer
 *********************************/
 
 .footer
